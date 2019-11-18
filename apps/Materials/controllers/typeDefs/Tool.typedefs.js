@@ -4,13 +4,20 @@ const defs = `
     scalar Date
     scalar JSON
 
+    scalar QuantityHistory {
+        userId: String
+        type: String
+        quantity: Intger
+        date: Date
+    }
+
     scalar Checkout {
         userId: String
         username: String
         firstName: String
         lastName: String
+        quantity: Integer
         dateCheckedOut: Date
-        dateCheckedIn: Date
     }
 
     scalar Log {
@@ -18,24 +25,25 @@ const defs = `
         message: String
     }
 
-    type Tool {
+    type Material {
         id: ID!
         name: String
+        type: String
         dataAdded: Date
         quantity: Integer
-        quantityCheckedOut: Integer
+        quantityHistory: [QuanitityHistory]
         checkoutList: [Checkout]
         logs: [Log]
     }
 
     type Query {
-        getTools: [Tool!]!
-        getToolById(id: ID!): Tool
+        getMaterials: [Material!]!
+        getMaterialById(id: ID!): Material
     }
 
     type Mutation {
-        createTool(name: String!, quantity: Integer!): Tool!
+        createMaterial(name: String!, quantity: Integer!): Material!
     }
 `;
 
-module.exports.toolTypedefs = buildSchema(`${defs}`);
+module.exports.materialTypedefs = buildSchema(`${defs}`);
