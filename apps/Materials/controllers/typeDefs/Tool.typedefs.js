@@ -44,9 +44,10 @@ const defs = `
     }
 
     type Mutation {
-        createMaterial(name: String!, type: String!, quantity: Integer!): Material!
-        updateMaterial(id: ID!, updateVariable: String!, updateValue: String!): Material!
-        deleteMaterial(id: ID!): Material!
+        createMaterial(name: String!,  userId: String!, type: String!, quantity: Integer!): Material!
+        updateMaterial(id: ID!, userId: String!, updateVariable: String!, updateValue: String!): Material!
+        deleteMaterial(id: ID!, userId: String!): Material!
+        checkoutMaterial(id: ID! userId: String!, quantity: Integer!): Material!
     }
 `;
 
