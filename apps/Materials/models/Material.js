@@ -1,6 +1,6 @@
 const { dbs } = require('../../configs');
 
-module.exports.Tool = dbs.db1().model('Tool', {
+module.exports.Material = dbs.db1().model('Material', {
   name: String,
   type: String,
   dataAdded: Date,
