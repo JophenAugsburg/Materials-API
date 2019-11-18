@@ -39,6 +39,8 @@ const defs = `
     type Query {
         getMaterials: [Material!]!
         getMaterialById(id: ID!): Material
+        getMaterialByName(name: String!): Material
+        getMaterialByType(type: String!): [Material]!
     }
 
     type Mutation {
