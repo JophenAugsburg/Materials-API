@@ -16,7 +16,7 @@ const defs = `
         username: String
         firstName: String
         lastName: String
-        quantity: Integer
+        quantity: Int
         dateCheckedOut: Date
     }
 
@@ -30,7 +30,7 @@ const defs = `
         name: String
         type: String
         dataAdded: Date
-        quantity: Integer
+        quantity: Int
         quantityHistory: [QuanitityHistory]
         checkoutList: [Checkout]
         logs: [Log]
@@ -44,10 +44,10 @@ const defs = `
     }
 
     type Mutation {
-        createMaterial(name: String!,  userId: String!, type: String!, quantity: Integer!): Material!
+        createMaterial(name: String!,  userId: String!, type: String!, quantity: Int!): Material!
         updateMaterial(id: ID!, userId: String!, updateVariable: String!, updateValue: String!): Material!
         deleteMaterial(id: ID!, userId: String!): Material!
-        checkoutMaterial(id: ID! userId: String!, quantity: Integer!): Material!
+        checkoutMaterial(id: ID! userId: String!, quantity: Int!): Material!
     }
 `;
 

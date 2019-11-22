@@ -1,7 +1,7 @@
 const { getLogMessage } = require('./logMessages');
 
 const models = {
-  Tool: require('../../../apps/Tools/tool_exports'),
+  Material: require('../../../apps/Materials/models/Material'),
 }
 
 let updateLogs;

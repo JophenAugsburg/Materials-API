@@ -2,8 +2,8 @@ module.exports.getLogMessage = {
   custom: {
     0: 'CUSTOM MESSAGE | '
   },
-  // Tool Messages
-  tool: {
-    1: 'TOOL | Successfully added a new tool: ',
+  // Material Messages
+  material: {
+    1: 'Material | Successfully added a new material: ',
   },
 };
