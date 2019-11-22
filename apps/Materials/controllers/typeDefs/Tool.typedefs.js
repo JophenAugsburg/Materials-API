@@ -31,7 +31,7 @@ const defs = `
         type: String
         dataAdded: Date
         quantity: Int
-        quantityHistory: [QuanitityHistory]
+        quantityHistory: [QuantityHistory]
         checkoutList: [Checkout]
         logs: [Log]
     }

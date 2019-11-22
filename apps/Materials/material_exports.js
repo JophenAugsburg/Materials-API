@@ -1,5 +1,5 @@
-const { Tool } = require('./models/Tool');
+const { Material } = require('./models/Material');
 
 module.exports = {
-  Tool
+  Material
 };

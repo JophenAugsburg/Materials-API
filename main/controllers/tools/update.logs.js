@@ -1,7 +1,7 @@
 const { getLogMessage } = require('./logMessages');
 
 const models = {
-  Material: require('../../../apps/Materials/models/Material'),
+  Material: require('../../../apps/Materials/material_exports').Material,
 }
 
 let updateLogs;
@@ -10,7 +10,7 @@ module.exports.updateLogs = async (
   id, model, type, messageNumber, logValue
 ) => updateLogs(id, model, type, messageNumber, logValue);
 
-updateLogs = (id, model, type, messageNumber, logValue) => {
+updateLogs = async (id, model, type, messageNumber, logValue) => {
   let logVal = '';
   if (logValue !== undefined) {
     logVal = logValue;

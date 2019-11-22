@@ -1,5 +1,5 @@
-const Tools = require('../Tools/app_main');
+const Materials = require('../Materials/app_main');
 
 module.exports.apps = [
-  Tools,
+  Materials,
 ];

@@ -1,36 +1,74 @@
 const { updateLogs } = require('../../../tools');
-const { Tool } = require('../../models/Tool');
+const { Material } = require('../../models/Material');
 
-const getTools = () => Tool.find();
+const getMaterials = () => Material.find();
 
-const getToolById = id => Tool.findById(id);
+const getMaterialById = id => Material.findById(id);
 
-const createTool = async (name, quantity) => {
+const getMaterialByName = name => Material.findOne({ name });
+
+const getMaterialByType = type => Material.findOne({ type });
+
+const createMaterial = async (name, userId, type, quantity) => {
   const dateAdded = new Date();
-  const tool = new Tool({
+  const material = new Material({
+    createdBy: userId,
     name,
-    quantity,
+    type,
     dateAdded,
-    quantityCheckedOut: 0,
+    quantity,
+    quantityHistory: [
+      {
+        userId,
+        type: "add",
+        quanitity,
+        date: dateAdded,
+      },
+    ],
     checkoutList: [],
     logs: [],
   });
-  await tool.save();
-  await updateLogs(tool._id, 'Tool', 'tool', 1, name);
-  return tool;
+  await material.save();
+  await updateLogs(material._id, 'Material', 'material', 1, name);
+  return material;
 };
 
+updateMaterial = async (id, userId, updateVariable, updateValue) => {
+
+}
+
+deleteMaterial = async (id, userId) => {
+  const material = await Material.findByIdAndDelete(id);
+  await updateLogs(material._id, 'Material', 'material', 2, `${name} - Deleted by: ${userId}`);
+  return material;
+}
+
+checkoutMaterial = async (id, userId, quantity) => {
+
+}
+
 // Functions condenced to be exported
-const toolResolvers = {
+const materialResolvers = {
   Query: {
-    getTools: () => getTools(),
-    getToolById: ({ id }) => getToolById(id)
+    getMaterials: () => getMaterials(),
+    getMaterialById: ({ id }) => getMaterialById(id),
+    getMaterialByName: ({ name }) => getMaterialByName(name),
+    getMaterialByType: ({ type }) => getMaterialByType(type),
   },
   Mutation: {
-    createTool: async ({
-      name, quantity
-    }) => createTool(name, quantity),
+    createMaterial: ({
+      name, userId, type, quantity
+    }) => createMaterial(name, userId, type, quantity),
+    updateMaterial: ({
+      id, userId, updateVariable, updateValue
+    }) => updateMaterial(id, userId, updateVariable, updateValue),
+    deleteMaterial: ({
+      id, userId
+    }) => deleteMaterial(id, userId),
+    checkoutMaterial: ({
+      id, userId, quantity
+    }) => checkoutMaterial(id, userId, quantity),
   }
 };
 
-module.exports.toolResolvers = toolResolvers;
+module.exports.materialResolvers = materialResolvers;
