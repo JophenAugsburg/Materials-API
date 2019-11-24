@@ -37,11 +37,7 @@ updateMaterial = async (id, userId, updateVariable, updateValue) => {
 
 }
 
-deleteMaterial = async (id, userId) => {
-  const material = await Material.findByIdAndDelete(id);
-  await updateLogs(material._id, 'Material', 'material', 2, `${name} - Deleted by: ${userId}`);
-  return material;
-}
+deleteMaterial = async (id) => Material.findByIdAndDelete(id);
 
 checkoutMaterial = async (id, userId, quantity) => {
 
@@ -63,8 +59,8 @@ const materialResolvers = {
       id, userId, updateVariable, updateValue
     }) => updateMaterial(id, userId, updateVariable, updateValue),
     deleteMaterial: ({
-      id, userId
-    }) => deleteMaterial(id, userId),
+      id
+    }) => deleteMaterial(id),
     checkoutMaterial: ({
       id, userId, quantity
     }) => checkoutMaterial(id, userId, quantity),

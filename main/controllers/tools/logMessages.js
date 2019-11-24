@@ -4,6 +4,6 @@ module.exports.getLogMessage = {
   },
   // Material Messages
   material: {
-    1: 'Material | Successfully added a new material: ',
+    1: 'MATERIAL | Successfully added a new material: ',
   },
 };
