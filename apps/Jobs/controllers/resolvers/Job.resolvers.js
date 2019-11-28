@@ -1,7 +1,7 @@
-const toolQueryResolvers = require('./Tool.Query.resolvers');
-const toolMutationResolvers = require('./Tool.Mutation.resolvers');
+const jobQueryResolvers = require('./Job.Query.resolvers');
+const jobMutationResolvers = require('./Job.Mutation.resolvers');
 
 module.exports.materialResolvers = {
-  Query: toolQueryResolvers,
-  Mutation: toolMutationResolvers
+  Query: jobQueryResolvers,
+  Mutation: jobMutationResolvers
 };
