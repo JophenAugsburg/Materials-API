@@ -1,5 +1,5 @@
-const { Material } = require('./models/Material');
+const { Job } = require('./models/Job');
 
 module.exports = {
-  Material
+  Job
 };
