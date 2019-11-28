@@ -1,8 +1,8 @@
 const { graphql } = require('graphql');
 const express = require('express');
 const { checkKey } = require('../../tools');
-const { toolResolvers } = require('../controllers/resolvers/tool.resolvers');
-const { toolTypedefs } = require('../controllers/typeDefs/tool.typedefs');
+const { jobResolvers } = require('../controllers/resolvers/job.resolvers');
+const { jobTypedefs } = require('../controllers/typeDefs/job.typedefs');
 
 const router = express.Router();
 
@@ -18,9 +18,9 @@ graphQL = async (body, res) => {
     resolversType = 'Mutation';
   }
   
-  const result = await graphql(toolTypedefs,
+  const result = await graphql(jobTypedefs,
     query,
-    toolResolvers[resolversType]).then(response => response.data);
+    jobResolvers[resolversType]).then(response => response.data);
 
     res.send(result);
 };

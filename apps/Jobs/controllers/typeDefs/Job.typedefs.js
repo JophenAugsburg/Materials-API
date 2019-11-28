@@ -25,7 +25,7 @@ const defs = `
         message: String
     }
 
-    type Material {
+    type Job {
         id: ID!
         name: String
         type: String
@@ -37,18 +37,18 @@ const defs = `
     }
 
     type Query {
-        getMaterials: [Material!]!
-        getMaterialById(id: ID!): Material
-        getMaterialByName(name: String!): Material
-        getMaterialByType(type: String!): [Material]!
+        getJobs: [Job!]!
+        getJobById(id: ID!): Job
+        getJobByName(name: String!): Job
+        getJobByType(type: String!): [Job]!
     }
 
     type Mutation {
-        createMaterial(name: String!,  userId: String!, type: String!, quantity: Int!): Material!
-        updateMaterial(id: ID!, userId: String!, updateVariable: String!, updateValue: String!): Material!
-        deleteMaterial(id: ID!): Material!
-        checkoutMaterial(id: ID! userId: String!, quantity: Int!): Material!
+        createJob(name: String!,  userId: String!, type: String!, quantity: Int!): Job!
+        updateJob(id: ID!, userId: String!, updateVariable: String!, updateValue: String!): Job!
+        deleteJob(id: ID!): Job!
+        checkoutJob(id: ID! userId: String!, quantity: Int!): Job!
     }
 `;
 
-module.exports.materialTypedefs = buildSchema(`${defs}`);
+module.exports.jobTypedefs = buildSchema(`${defs}`);
