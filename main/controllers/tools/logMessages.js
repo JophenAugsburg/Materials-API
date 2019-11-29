@@ -6,4 +6,8 @@ module.exports.getLogMessage = {
   material: {
     1: 'MATERIAL | Successfully added a new material: ',
   },
+  // Jon Messages
+  job: {
+    1: 'JOB | Successfully added a new job: ',
+  },
 };
