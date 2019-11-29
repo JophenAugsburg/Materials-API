@@ -6,19 +6,10 @@ module.exports.Job = dbs.db1().model('Job', {
   type: String,
   dataAdded: Date,
   quantity: Number,
-  quantityHistory: [{
-    userId: String,
-    type: String, // add or remove
-    quantity: Number,
-    date: Date,
-  }],
-  checkoutList: [{
-    userId: String,
-    username: String,
-    firstName: String,
-    lastName: String,
-    quantity: Number,
-    dateCheckedOut: Date,
+  parts: [{
+    partId: String,
+    partNumber: String,
+    orderQty: Number,
   }],
   logs: [{
     time: Date,
