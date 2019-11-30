@@ -4,20 +4,10 @@ const defs = `
     scalar Date
     scalar JSON
 
-    scalar QuantityHistory {
-        userId: String
-        type: String
-        quantity: Intger
-        date: Date
-    }
-
-    scalar Checkout {
-        userId: String
-        username: String
-        firstName: String
-        lastName: String
-        quantity: Int
-        dateCheckedOut: Date
+    scalar Part {
+        partId: String
+        partNumber: String
+        orderQty: String
     }
 
     scalar Log {
@@ -27,20 +17,19 @@ const defs = `
 
     type Job {
         id: ID!
-        name: String
-        type: String
-        dataAdded: Date
-        quantity: Int
-        quantityHistory: [QuantityHistory]
-        checkoutList: [Checkout]
+        createdBy: String
+        complete: Boolean
+        job: String
+        dateAdded: Date
+        totalAmount: Float
+        qparts: [Part]
         logs: [Log]
     }
 
     type Query {
         getJobs: [Job!]!
         getJobById(id: ID!): Job
-        getJobByName(name: String!): Job
-        getJobByType(type: String!): [Job]!
+        getJobsByUser(userId: String!): [Job]!
     }
 
     type Mutation {
