@@ -1,8 +1,8 @@
 const { graphql } = require('graphql');
 const express = require('express');
 const { checkKey } = require('../../tools');
-const { materialResolvers } = require('../controllers/resolvers/material.resolvers');
-const { materialTypedefs } = require('../controllers/typeDefs/material.typedefs');
+const { materialResolvers } = require('../controllers/resolvers/Material.resolvers');
+const { materialTypedefs } = require('../controllers/typeDefs/Material.typedefs');
 
 const router = express.Router();
 
