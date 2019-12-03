@@ -20,7 +20,7 @@ graphQL = async (body, res) => {
   console.log(body);
   const result = await graphql(materialTypedefs,
     query,
-    materialResolvers[resolversType]).then(response => response.data);
+    materialResolvers[resolversType]).then(response => response);
   console.log(result);
   res.send(result);
 };
