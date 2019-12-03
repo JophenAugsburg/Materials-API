@@ -29,7 +29,7 @@ const defs = `
         id: ID!
         name: String
         type: String
-        dataAdded: Date
+        dateAdded: Date
         quantity: Int
         quantityHistory: [QuantityHistory]
         checkoutList: [Checkout]

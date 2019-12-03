@@ -7,14 +7,14 @@ const defs = `
     scalar QuantityHistory {
         userId: String
         type: String
-        quantity: Intger
+        quantity: Integer
         date: Date
     }
 
     scalar Checkout {
         userId: String
         username: String
-        quantity: Int
+        quantity: Integer
         dateCheckedOut: Date,
         dueDate: Date,
         jobId: String,
@@ -30,7 +30,7 @@ const defs = `
         name: String
         type: String
         dateAdded: Date
-        quantity: Int
+        quantity: Integer
         quantityHistory: [QuantityHistory]
         checkoutList: [Checkout]
         logs: [Log]

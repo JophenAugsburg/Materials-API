@@ -4,7 +4,7 @@ module.exports.Tool = dbs.db1().model('tool', {
   createdBy: String, // userId of the user that created it
   name: String,
   type: String,
-  dataAdded: Date,
+  dateAdded: Date,
   quantity: Number,
   quantityHistory: [{
     userId: String,
