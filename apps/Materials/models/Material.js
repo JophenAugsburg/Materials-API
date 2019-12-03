@@ -7,10 +7,7 @@ module.exports.Material = dbs.db1().model('Material', {
   dataAdded: Date,
   quantity: Number,
   quantityHistory: [{
-    userId: String,
-    type: String, // add or remove
-    quantity: Number,
-    date: Date,
+    
   }],
   checkoutList: [{
     userId: String,
