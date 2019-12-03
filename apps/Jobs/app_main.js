@@ -1,7 +1,7 @@
 const { routes } = require('./routes/routes');
 
 const contents = {
-  url: '/material',
+  url: '/job',
   routes,
 };
 
