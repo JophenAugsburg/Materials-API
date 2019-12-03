@@ -17,12 +17,12 @@ graphQL = async (body, res) => {
   if (query.includes('mutation')) {
     resolversType = 'Mutation';
   }
-  
+  console.log(body);
   const result = await graphql(materialTypedefs,
     query,
     materialResolvers[resolversType]).then(response => response.data);
-
-    res.send(result);
+  console.log(result);
+  res.send(result);
 };
 
 module.exports.routes = router;
