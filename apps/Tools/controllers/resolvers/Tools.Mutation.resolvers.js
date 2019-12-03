@@ -2,22 +2,21 @@ const { updateLogs } = require('../../../tools');
 const { Tool } = require('../../models/Tool');
 
 const createTool = async (name, userId, quantity, type ) => {
-  
-    const dateAdded = new Date(); //Date that the the tool is created. 
+    const dateAdded = new Date(); 
     const tool = new Tool ({
-        createdBy: userId,
-        name,
-        type,
-        dateAdded,
-        quantity,
-        quantityHistory: [
-            {
-              userId,
-              type: "crearted",
-              quanitity,
-              date: dateAdded,
-            },
-          ],
+        created_by: userId,
+        tool_name: name,
+        tool_type: type,
+        tool_date_added: dateAdded ,
+        tool_quantity: quantity,
+        // tool_quantity_history: [
+        //     {
+        //       userId,
+        //       type: "crearted",
+        //       quanitity,
+        //       date: dateAdded,
+        //     },
+          // ],
           checkoutList: [],
           logs: [],
     });
@@ -36,7 +35,7 @@ checkoutTool = async (id, userId, quantity) => ({
 
 module.export = {
     createTool:({
-        name, userId, type, quanntity 
+        name, userId, type, quantity 
     }) => createTool(name, userId, type, quantity),
 
     updateTool: ({

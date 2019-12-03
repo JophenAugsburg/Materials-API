@@ -7,14 +7,14 @@ const defs = `
     scalar QuantityHistory {
         userId: String
         type: String
-        quantity: Integer
+        quantity: String
         date: Date
     }
 
     scalar Checkout {
         userId: String
         username: String
-        quantity: Integer
+        quantity: String
         dateCheckedOut: Date,
         dueDate: Date,
         jobId: String,
@@ -30,7 +30,7 @@ const defs = `
         name: String
         type: String
         dateAdded: Date
-        quantity: Integer
+        quantity: String
         quantityHistory: [QuantityHistory]
         checkoutList: [Checkout]
         logs: [Log]
@@ -44,7 +44,7 @@ const defs = `
     }
 
     type Mutation {
-        createTool(name: String!,  userId: String!, type: String!, quantity: Int!): Tool!
+        createTool(name: String!,  userId: String!, type: String!, quantity: String!): Tool!
         updateTool(id: ID!, userId: String!, updateVariable: String!, updateValue: String!): Tool!
         deleteTool(id: ID!): Tool!
         checkoutTool(id: ID! userId: String!, quantity: Int!): Tool!
