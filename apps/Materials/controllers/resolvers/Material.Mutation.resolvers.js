@@ -13,7 +13,7 @@ const createMaterial = async (name, userId, type, quantity) => {
       {
         userId,
         type: "add",
-        quanitity,
+        quantity,
         date: dateAdded,
       },
     ],
