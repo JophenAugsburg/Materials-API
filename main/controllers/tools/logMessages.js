@@ -10,4 +10,8 @@ module.exports.getLogMessage = {
   job: {
     1: 'JOB | Successfully added a new job: ',
   },
+   // tools Messages
+   tool: {
+    1: 'Tool | Successfully added a new tool: ',
+  },
 };

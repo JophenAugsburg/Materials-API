@@ -3,7 +3,7 @@ const { Tool } = require('../../models/Tool');
 
 const createTool = async (name, userId, type, quantity) => {
   const dateAdded = new Date();
-  const Tool = new Tool({
+  const tool = new Tool({
     createdBy: userId,
     name,
     type,
