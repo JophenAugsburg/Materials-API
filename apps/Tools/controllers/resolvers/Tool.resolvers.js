@@ -1,5 +1,5 @@
-const toolQueryResolvers = require('./Tools.Query.resolvers');
-const toolMutationResolvers = require('./Tools.Mutation.resolvers');
+const toolQueryResolvers = require('./Tool.Query.resolvers');
+const toolMutationResolvers = require('./Tool.Mutation.resolvers');
 
 module.exports.toolResolvers = {
   Query: toolQueryResolvers,

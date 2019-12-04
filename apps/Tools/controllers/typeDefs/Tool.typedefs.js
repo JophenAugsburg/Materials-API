@@ -14,10 +14,10 @@ const defs = `
     scalar Checkout {
         userId: String
         username: String
+        firstName: String
+        lastName: String
         quantity: Int
-        dateCheckedOut: Date,
-        dueDate: Date,
-        jobId: String,
+        dateCheckedOut: Date
     }
 
     scalar Log {
@@ -29,7 +29,7 @@ const defs = `
         id: ID!
         name: String
         type: String
-        dateAdded: Date
+        dataAdded: Date
         quantity: Int
         quantityHistory: [QuantityHistory]
         checkoutList: [Checkout]
@@ -37,8 +37,8 @@ const defs = `
     }
 
     type Query {
-        getTools: [Tool!]!
-        getToolsById(id: ID!): Tool
+        getTool: [Tool!]!
+        getToolById(id: ID!): Tool
         getToolByName(name: String!): Tool
         getToolByType(type: String!): [Tool]!
     }
