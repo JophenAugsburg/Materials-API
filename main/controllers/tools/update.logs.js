@@ -3,6 +3,7 @@ const { getLogMessage } = require('./logMessages');
 const models = {
   Material: require('../../../apps/Materials/material_exports').Material,
   Job: require('../../../apps/Jobs/jobs_exports').Job,
+  Tool: require('../../../apps/Tools/tool_exports').Tool
 }
 
 let updateLogs;
